@@ -12,6 +12,7 @@
 
 #text-box {
     min-height: 20vh;
+    height: 50vh;
     width: 100%;
     resize: vertical;
     font-family: inherit;
