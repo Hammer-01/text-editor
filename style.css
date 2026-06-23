@@ -51,7 +51,9 @@ button {
     #main {
         width: 90vw;
     }
-    
+}
+
+@media (width < 600px) {
     #tools {
         float: none;
         text-align: center;
@@ -71,8 +73,50 @@ button {
     }
 }
 
-@media (height < 700px) {
+@media (height < 400px) {
     #main {
-        top: 5vw;
+        top: calc(50vh - 120px);
     }
+    
+    #text-box {
+        height: 200px
+    }
+}
+
+@media (height < 240px) {
+    #main {
+        top: 0;
+    }
+}
+
+@media (height < 200px) {
+    #text-box {
+        height: 100vh
+    }
+}
+
+@media (width < 800px) {
+    @media (height < 800px) {
+        #main {
+            top: 5vw;
+        }
+    }
+    @media (height < 400px) {
+        #main {
+            --100vw: 100vw;
+            --w: calc(5*tan(atan2(var(--100vw), 100px))); /* 5vw in pixels */
+            top: calc(var(--w) * 0.5vh - 5vw);
+        }
+    }
+    @media (height < 200px) {
+        #main {
+            top: 0;
+        }
+    }
+}
+
+@property --100vw {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: false;
 }
